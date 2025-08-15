@@ -164,7 +164,6 @@ export const ResultsPanelDemo: React.FC = () => {
         <ResultsPanel
           results={calculationResults}
           scenario={currentScenario}
-          showDetailedBreakdown={showDetailedBreakdown}
         />
       )}
 

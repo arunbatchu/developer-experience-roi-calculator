@@ -72,7 +72,6 @@ export interface InputPanelProps {
 export interface ResultsPanelProps {
   results: CalculationResults;
   scenario: Scenario;
-  showDetailedBreakdown: boolean;
 }
 
 export interface ScenarioComparisonProps {

@@ -7,14 +7,10 @@ import { NumberFormatter } from '../../utils/NumberFormatter.js';
 
 export const ResultsPanel: React.FC<ResultsPanelProps> = ({
   results,
-  scenario,
-  showDetailedBreakdown
+  scenario
 }) => {
   const [expandedStep, setExpandedStep] = useState<number | null>(null);
   const [showAlternatives, setShowAlternatives] = useState(false);
-
-  // Debug log to check if prop is being received
-  console.log('ResultsPanel showDetailedBreakdown:', showDetailedBreakdown);
 
   // Use NumberFormatter methods directly for consistency
 
@@ -191,17 +187,13 @@ export const ResultsPanel: React.FC<ResultsPanelProps> = ({
       )}
 
       {/* Step-by-Step Calculation Breakdown */}
-      {showDetailedBreakdown && (
-        <div className="mb-8 border-2 border-dashed border-green-300 p-4 rounded-lg">
-          <h3 className="text-xl font-semibold text-gray-900 mb-4">
-            Calculation Breakdown
-            <span className="text-sm font-normal text-gray-500 ml-2">
-              (AWS CTS-SW Framework)
-            </span>
-            <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded ml-2">
-              DETAILED VIEW
-            </span>
-          </h3>
+      <div className="mb-8">
+        <h3 className="text-xl font-semibold text-gray-900 mb-4">
+          Calculation Breakdown
+          <span className="text-sm font-normal text-gray-500 ml-2">
+            (AWS CTS-SW Framework)
+          </span>
+        </h3>
         
         <div className="space-y-4">
           {results.calculationSteps.map((step) => (
@@ -270,19 +262,7 @@ export const ResultsPanel: React.FC<ResultsPanelProps> = ({
             </div>
           ))}
         </div>
-        </div>
-      )}
-
-      {/* Message when detailed breakdown is hidden */}
-      {!showDetailedBreakdown && (
-        <div className="mb-8 p-4 bg-gray-100 border border-gray-300 rounded-lg text-center">
-          <div className="text-gray-600">
-            <span className="text-sm">📊 Detailed calculation breakdown is hidden.</span>
-            <br />
-            <span className="text-xs text-gray-500">Check "Show Detailed Breakdown" above to see step-by-step calculations.</span>
-          </div>
-        </div>
-      )}
+      </div>
 
       {/* AWS Benchmark Comparison */}
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
@@ -348,29 +328,27 @@ export const ResultsPanel: React.FC<ResultsPanelProps> = ({
         </div>
       </div>
 
-      {/* Detailed Breakdown Toggle */}
-      {showDetailedBreakdown && (
-        <div className="mt-8 p-6 bg-gray-50 rounded-lg">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Supporting Metrics</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-            <div>
-              <div className="font-medium text-gray-700">Deployments per Builder</div>
-              <div className="text-gray-600">{results.supportingMetrics.deploymentsPerBuilder || 'Not calculated'}</div>
-            </div>
-            <div>
-              <div className="font-medium text-gray-700">Interventions Reduction</div>
-              <div className="text-gray-600">{results.supportingMetrics.interventionsReduction || 'Not calculated'}</div>
-            </div>
-            <div>
-              <div className="font-medium text-gray-700">Incident Reduction</div>
-              <div className="text-gray-600">{results.supportingMetrics.incidentReduction || 'Not calculated'}</div>
-            </div>
+      {/* Supporting Metrics */}
+      <div className="mt-8 p-6 bg-gray-50 rounded-lg">
+        <h3 className="text-lg font-semibold text-gray-900 mb-4">Supporting Metrics</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div>
+            <div className="font-medium text-gray-700">Deployments per Builder</div>
+            <div className="text-gray-600">{results.supportingMetrics.deploymentsPerBuilder || 'Not calculated'}</div>
           </div>
-          <div className="mt-4 text-xs text-gray-500">
-            * Supporting metrics will be implemented in future tasks
+          <div>
+            <div className="font-medium text-gray-700">Interventions Reduction</div>
+            <div className="text-gray-600">{results.supportingMetrics.interventionsReduction || 'Not calculated'}</div>
+          </div>
+          <div>
+            <div className="font-medium text-gray-700">Incident Reduction</div>
+            <div className="text-gray-600">{results.supportingMetrics.incidentReduction || 'Not calculated'}</div>
           </div>
         </div>
-      )}
+        <div className="mt-4 text-xs text-gray-500">
+          * Supporting metrics will be implemented in future tasks
+        </div>
+      </div>
     </div>
   );
 };

@@ -23,7 +23,6 @@ export const CalculatorDashboard: React.FC<CalculatorDashboardProps> = ({
   );
   const [calculationResults, setCalculationResults] = useState<CalculationResults | null>(null);
   const [calculationError, setCalculationError] = useState<string | null>(null);
-  const [showDetailedBreakdown, setShowDetailedBreakdown] = useState(true);
   const [showPresetSelector, setShowPresetSelector] = useState(false);
 
   const { validationErrors, validateField, validateScenario } = useInputValidation();
@@ -228,29 +227,10 @@ export const CalculatorDashboard: React.FC<CalculatorDashboardProps> = ({
           )}
 
           {calculationResults && !hasValidationErrors && (
-            <>
-              {/* Results Panel Controls */}
-              <div className="bg-gray-50 rounded-lg p-4">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-medium text-gray-900">Results</h3>
-                  <label className="flex items-center">
-                    <input
-                      type="checkbox"
-                      checked={showDetailedBreakdown}
-                      onChange={(e) => setShowDetailedBreakdown(e.target.checked)}
-                      className="mr-2"
-                    />
-                    <span className="text-sm text-gray-700">Show Detailed Breakdown</span>
-                  </label>
-                </div>
-              </div>
-
-              <ResultsPanel
-                results={calculationResults}
-                scenario={currentScenario}
-                showDetailedBreakdown={showDetailedBreakdown}
-              />
-            </>
+            <ResultsPanel
+              results={calculationResults}
+              scenario={currentScenario}
+            />
           )}
 
           {hasValidationErrors && (
