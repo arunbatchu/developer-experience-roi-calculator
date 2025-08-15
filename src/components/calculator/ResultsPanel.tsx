@@ -13,6 +13,9 @@ export const ResultsPanel: React.FC<ResultsPanelProps> = ({
   const [expandedStep, setExpandedStep] = useState<number | null>(null);
   const [showAlternatives, setShowAlternatives] = useState(false);
 
+  // Debug log to check if prop is being received
+  console.log('ResultsPanel showDetailedBreakdown:', showDetailedBreakdown);
+
   // Use NumberFormatter methods directly for consistency
 
   const handleSuggestAlternative = () => {
@@ -189,11 +192,14 @@ export const ResultsPanel: React.FC<ResultsPanelProps> = ({
 
       {/* Step-by-Step Calculation Breakdown */}
       {showDetailedBreakdown && (
-        <div className="mb-8">
+        <div className="mb-8 border-2 border-dashed border-green-300 p-4 rounded-lg">
           <h3 className="text-xl font-semibold text-gray-900 mb-4">
             Calculation Breakdown
             <span className="text-sm font-normal text-gray-500 ml-2">
               (AWS CTS-SW Framework)
+            </span>
+            <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded ml-2">
+              DETAILED VIEW
             </span>
           </h3>
         
@@ -264,6 +270,17 @@ export const ResultsPanel: React.FC<ResultsPanelProps> = ({
             </div>
           ))}
         </div>
+        </div>
+      )}
+
+      {/* Message when detailed breakdown is hidden */}
+      {!showDetailedBreakdown && (
+        <div className="mb-8 p-4 bg-gray-100 border border-gray-300 rounded-lg text-center">
+          <div className="text-gray-600">
+            <span className="text-sm">📊 Detailed calculation breakdown is hidden.</span>
+            <br />
+            <span className="text-xs text-gray-500">Check "Show Detailed Breakdown" above to see step-by-step calculations.</span>
+          </div>
         </div>
       )}
 
