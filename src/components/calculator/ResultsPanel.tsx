@@ -188,13 +188,14 @@ export const ResultsPanel: React.FC<ResultsPanelProps> = ({
       )}
 
       {/* Step-by-Step Calculation Breakdown */}
-      <div className="mb-8">
-        <h3 className="text-xl font-semibold text-gray-900 mb-4">
-          Calculation Breakdown
-          <span className="text-sm font-normal text-gray-500 ml-2">
-            (AWS CTS-SW Framework)
-          </span>
-        </h3>
+      {showDetailedBreakdown && (
+        <div className="mb-8">
+          <h3 className="text-xl font-semibold text-gray-900 mb-4">
+            Calculation Breakdown
+            <span className="text-sm font-normal text-gray-500 ml-2">
+              (AWS CTS-SW Framework)
+            </span>
+          </h3>
         
         <div className="space-y-4">
           {results.calculationSteps.map((step) => (
@@ -263,7 +264,8 @@ export const ResultsPanel: React.FC<ResultsPanelProps> = ({
             </div>
           ))}
         </div>
-      </div>
+        </div>
+      )}
 
       {/* AWS Benchmark Comparison */}
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
