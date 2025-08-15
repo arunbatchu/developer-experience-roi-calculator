@@ -1,6 +1,6 @@
-# Developer Experience ROI Calculator
+# Development Productivity Calculator
 
-An interactive dashboard that implements AWS's Cost to Serve Software (CTS-SW) framework for calculating ROI on developer experience investments.
+An interactive dashboard that implements AWS's Cost to Serve Software (CTS-SW) framework for calculating ROI on development productivity investments.
 
 ## Project Structure
 
@@ -53,6 +53,17 @@ This calculator implements Amazon's proven methodology that achieved 15.9% cost 
 
 - **Traditional Business Model**: Cost Avoidance = Total Developer Cost × CTS-SW Improvement %
 - **Tech Company Model**: Includes gross margin improvement and profit impact calculations
+
+## Features
+
+- 📊 **Interactive ROI Calculations** - Real-time calculations using AWS CTS-SW framework
+- 🏢 **Multiple Business Models** - Support for both traditional businesses and tech companies
+- 📈 **Scenario Comparison** - Compare multiple scenarios side-by-side
+- 📋 **Export Functionality** - Export results to CSV, JSON, or PDF
+- 🎯 **Preset Scenarios** - AWS benchmark examples and organization-size templates
+- 🔢 **Smart Number Formatting** - Abbreviated notation (K, M, B) with full precision tooltips
+- ✅ **Input Validation** - Comprehensive validation with helpful error messages
+- 📱 **Responsive Design** - Works on desktop, tablet, and mobile devices
 
 ## Next Steps
 

@@ -1,5 +1,5 @@
 /**
- * NumberFormatter utility class for the Developer Experience ROI Calculator
+ * NumberFormatter utility class for the Development Productivity Calculator
  * Provides intelligent number formatting with abbreviated notation and scale detection
  */
 

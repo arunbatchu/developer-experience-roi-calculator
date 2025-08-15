@@ -1,6 +1,6 @@
 /**
  * NumberTooltip component for displaying full precision values on hover
- * Used throughout the application to show detailed number information
+ * Used throughout the Development Productivity Calculator to show detailed number information
  */
 
 import React, { useState } from 'react';

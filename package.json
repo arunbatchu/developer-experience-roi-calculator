@@ -1,7 +1,8 @@
 {
-  "name": "developer-experience-roi-calculator",
+  "name": "development-productivity-calculator",
+  "description": "Interactive ROI calculator for development productivity improvements using AWS CTS-SW framework",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "homepage": "https://arunbatchu.github.io/developer-experience-roi-calculator",
   "scripts": {

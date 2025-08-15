@@ -140,7 +140,7 @@ export const CalculatorDashboard: React.FC<CalculatorDashboardProps> = ({
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
           <div>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">
-              Developer Experience ROI Calculator
+              Development Productivity Calculator
             </h1>
             <p className="text-gray-600">
               Calculate ROI using AWS's Cost to Serve Software (CTS-SW) framework
