@@ -22,19 +22,19 @@ export interface CalculationResults {
   costAvoidance: number;
   roiMultiple: number;
   roiPercentage: number;
-  
+
   // Tech company specific
   grossMarginImprovement?: number;
   profitImpact?: number;
   profitBoostPercentage?: number;
-  
+
   // Supporting metrics
   supportingMetrics: {
     deploymentsPerBuilder: number;
     interventionsReduction: number;
     incidentReduction: number;
   };
-  
+
   calculationSteps: CalculationStep[];
 }
 
